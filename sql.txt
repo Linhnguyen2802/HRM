@@ -1,0 +1,37 @@
+USE MASTER
+go
+CREATE DATABASE ProjectManagement
+go
+USE ProjectManagement
+go
+
+CREATE TABLE Department
+(
+	depID int PRIMARY KEY identity,
+	DepName Nvarchar(50) NOT null
+)
+
+CREATE TABLE Project
+(
+	prID int PRIMARY KEY identity,
+	PrName Nvarchar(50) NOT null
+)
+
+CREATE TABLE Employees
+(
+	username varchar(25) PRIMARY KEY,
+	password varchar(25) NOT null,
+	FullName nvarchar(35) NOT null,
+	age varchar(50) not null,
+	address nvarchar(50) NOT null,
+	phone varchar(20) NOT null,
+	depID int FOREIGN KEY REFERENCES Department(depID),
+	prID int FOREIGN KEY REFERENCES	Project(prID)
+)
+
+select * from project
+
+
+
+
+
